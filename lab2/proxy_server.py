@@ -46,10 +46,6 @@ def main():
                             break
                         full_data_from_google += data
                     conn.sendall(full_data_from_google)
-            #print(full_data)
-            #send data back as response
-            #conn.sendall(full_data)
- 
 
 if __name__ == "__main__":
     main()

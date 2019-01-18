@@ -39,7 +39,6 @@ def connect_socket(addr):
 def main():
     addr_info = socket.getaddrinfo(HOST, PORT, proto=socket.SOL_TCP)
     addr = addr_info[0]
-    #connect_socket(addr)
     with Pool() as p:
         p.map(connect_socket, [addr for _ in range(1,50)])
 

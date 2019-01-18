@@ -28,11 +28,11 @@ def main():
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)      
 
         s.bind((HOST, PORT))
-        s.listen(1) #make socket listen
+        s.listen(1)
        
         #listen forever for connections
         while True:
-            conn, addr = s.accept() #accept incoming connections
+            conn, addr = s.accept()
             p = Process(target=handle_echo, args=(conn, addr))
             p.daemon = True
             p.start()
